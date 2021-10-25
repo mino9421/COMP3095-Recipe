@@ -11,3 +11,5 @@
   * Search for a Recipe
   * Plan a meal
   * View Profile
+
+![alt text](https://i.imgur.com/jbc2fn4.png)
