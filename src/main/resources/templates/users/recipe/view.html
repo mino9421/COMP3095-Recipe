@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>View Recipe Details</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+          integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous"
+          th:href="@{/webjars/bootstrap/3.4.1/css/bootstrap.min.css}">
+
+    <script th:src="@{/webjars/ jquery/1.11.1/jquery.min.js}"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+            integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"
+            th:src="@{/webjars/bootstrap/3.4.1/js/bootstrap.min.js}"></script>
+    <link rel="stylesheet" href="../../../static/css/regis.css">
+
+</head>
+<body>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Food Recipe Application</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li><a href="../dashboard.html">Home</a></li>
+            <li class="active"><a href="allRecipe.html">My recipes</a></li>
+            <li><a href="addRecipe.html">Add new recipe</a></li>
+            <li><a href="../planMeal.html">Plan for the meal</a></li>
+            <li><a href="../profile.html">My profile</a></li>
+            <li style="font-weight: bold;"><a href="../../index.html">Logout</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container-fluid" style="margin-top: 20px">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="pannel-group">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <h1 class="panel-title" th:text="${recipe.description}">Hamburger</h1>
+                            </div>
+                            <div class="col-md-1">
+                                <img class="btn btn-default" href="#" th:href="@{'/recipe/' + ${recipe.id} + '/image'}">
+                            </div>
+
+                </div>
+                            <div class="col-md-6">
+                                <img src="../../../static/images/food1.png" th:src="@{'/recipe/' + ${recipe.id} + '/recipeimage'}" height="auto" width="300">
+                            </div>
+                <div>
+                </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <h5><b>Prep Time:</b></h5>
+                            </div>
+                            <div class="col-md-3">
+                                <p th:text="${recipe.prepTime} + ' min'">10 min</p>
+                            </div>
+                            <div class="col-md-3">
+                                <h5><b>Difficulty:</b></h5>
+                            </div>
+                            <div class="col-md-3">
+                                <p th:text="${recipe.difficulty}">Easy</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <h5><b>Cooktime:</b></h5>
+                            </div>
+                            <div class="col-md-3">
+                                <p th:text="${recipe.cookTime} + ' min'">20 min</p>
+                            </div>
+                            <div class="col-md-3">
+                                <h5><b>Servings:</b></h5>
+                            </div>
+                            <div class="col-md-3">
+                                <p th:text="${recipe.serving}">2</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-md-10">
+                                <h1 class="panel-title">Ingredients</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <ul th:each="ingredient: ${recipe.ingredient}">
+                                    <li th:remove="all">1 Teaspoon of salt</li>
+                                    <li th:remove="all">1 Teaspoon of Sugar</li>
+                                    <li th:text="${ingredient.getAmount() +
+                                    ' - '+ingredient.getDescription()}">1 load of bread</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h1 class="panel-title" >Instructions</h1>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p th:text="${recipe.instructions}">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
