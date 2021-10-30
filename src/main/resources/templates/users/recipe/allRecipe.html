@@ -18,7 +18,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
             integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"
             th:src="@{/webjars/bootstrap/3.4.1/js/bootstrap.min.js}"></script>
-    <link rel="stylesheet" href="../../static/css/regis.css">
+    <link rel="stylesheet" href="../../../static/css/regis.css">
 
 </head>
 <body>
@@ -28,12 +28,12 @@
             <a class="navbar-brand" href="#">Food Recipe Application</a>
         </div>
         <ul class="nav navbar-nav">
-            <li><a href="dashboard.html">Home</a></li>
+            <li><a href="../dashboard.html">Home</a></li>
             <li class="active"><a href="allRecipe.html">My recipes</a></li>
             <li><a href="addRecipe.html">Add new recipe</a></li>
-            <li><a href="planMeal.html">Plan for the meal</a></li>
-            <li><a href="profile.html">My profile</a></li>
-            <li style="font-weight: bold;"><a href="../index.html">Logout</a></li>
+            <li><a href="../planMeal.html">Plan for the meal</a></li>
+            <li><a href="../profile.html">My profile</a></li>
+            <li style="font-weight: bold;"><a href="../../index.html">Logout</a></li>
         </ul>
     </div>
 </nav>
@@ -59,8 +59,8 @@
                             </thead>
                             <tr th:each="recipe : ${recipes}">
 
-                                <td th:text="${recipe.id}"></td>
-                                <td th:text="${recipe.name}"></td>
+                                <td th:text="${recipe.id}">1</td>
+                                <td th:text="${recipe.description}">Soup</td>
                                 <td><a href="#" th:href="@{'/recipe/' + ${recipe.id} + '/view'}">View</a></td>
                                 <td><a href="#" th:href="@{'/recipe/' + ${recipe.id} + '/update'}">Update</a></td>
                                 <td><a href="#" th:href="@{'/recipe/' + ${recipe.id} + '/delete'}">Delete</a></td>
@@ -73,7 +73,7 @@
     </div>
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
-            <a href="#" th:href="@{'recipe/new'}" class="btn btn-success" role="button" style="width: 740px;">Create New Recipe</a>
+            <a href="#" th:href="@{'recipe/add'}" class="btn btn-success" role="button" style="width: 740px;">Create New Recipe</a>
         </div>
     </div>
 </div>

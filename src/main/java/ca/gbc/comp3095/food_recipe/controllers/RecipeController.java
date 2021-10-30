@@ -1,6 +1,7 @@
 package ca.gbc.comp3095.food_recipe.controllers;
 
 import lombok.extern.slf4j.Slf4j;
+import ca.gbc.comp3095.food_recipe.model.Recipe;
 import ca.gbc.comp3095.food_recipe.services.RecipeService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,15 +21,20 @@ public class RecipeController {
     public String showById(@PathVariable String id, Model model){
         System.out.println("Inside Recipe Controller....with id value="+id);
         model.addAttribute("recipe", recipeService.findById(Long.valueOf(id)));
-        return "recipe/view";
+        return "view";
 
     }
+    @GetMapping("recipe/add")
+    public String addRecipe(Model model){
+        model.addAttribute("recipe", new Recipe());
 
+        return "addRecipe";
+    }
 
     @GetMapping("recipe/{id}/update")
     public String updateRecipe(@PathVariable String id, Model model){
 
-        return "recipe/update";
+        return "update";
     }
 
     @GetMapping ("recipe/{id}/delete")
