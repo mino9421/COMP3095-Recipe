@@ -28,28 +28,29 @@
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-  
+
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
           <a class="nav-link" href="/reset-password">Reset Password</a>
         </li>
-       
+
       </ul>
     </div>
     <div class="navbar-nav mr-auto">
-    <div>
-        <form th:action="@{/logout}" method="post">
-            <p>
-               <b style="color:white">[[${#request.userPrincipal.principal.fullName}]]</b>
-            </p>
-            <input type="submit"  class = "btn-primary" value="Sign Out" />
-        </form>
+        <div>
+            <form th:action="@{/logout}" method="post">
+                <p>
+                   <b style="color:white">[[${#request.userPrincipal.principal.fullName}]]</b>
+                </p>
+                <input type="submit"  class = "btn-primary" value="Sign Out" />
+            </form>
+        </div>
     </div>
   </nav>
 <!-- ---------------------NAVBAR END------------------------------------ -->
       <div class="content">
-    	<img th:src="@{/img/chef.gif}"/ height="40%" width="40%">
+    	<img th:src="@{/img/chef.gif}" height="40%" width="40%">
         <h1>Welcome to Logged in section [[${#request.userPrincipal.principal.fullName}]]</h1>
        
     </div>
