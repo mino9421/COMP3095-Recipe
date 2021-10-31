@@ -1,4 +1,4 @@
-package ca.gbc.comp3095.food_recipe.model;
+package ca.gbc.comp3095.model;
 
 public class Recipe {
 

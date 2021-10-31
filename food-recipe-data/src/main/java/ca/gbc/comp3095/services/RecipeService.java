@@ -1,6 +1,6 @@
-package ca.gbc.comp3095.food_recipe.services;
+package ca.gbc.comp3095.services;
 
-import  ca.gbc.comp3095.food_recipe.model.Recipe;
+import ca.gbc.comp3095.model.Recipe;
 
 import java.util.Set;
 

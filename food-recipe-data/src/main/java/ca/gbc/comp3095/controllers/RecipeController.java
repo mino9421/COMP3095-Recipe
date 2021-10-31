@@ -1,11 +1,12 @@
-package ca.gbc.comp3095.food_recipe.controllers;
+package ca.gbc.comp3095.controllers;
 
 import lombok.extern.slf4j.Slf4j;
-import ca.gbc.comp3095.food_recipe.model.Recipe;
-import ca.gbc.comp3095.food_recipe.services.RecipeService;
+import ca.gbc.comp3095.model.Recipe;
+import ca.gbc.comp3095.services.RecipeService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
 @Slf4j
 @Controller
 public class RecipeController {

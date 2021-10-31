@@ -66,7 +66,7 @@
                                 <div class="col-md-3 form-group">
                                     <label>Difficulty:</label>
                                     <select class="form-control" th:field="*{difficulty}">
-                                        <option th:each="difficultyValue: ${T(ca.gbc.comp3095.food_recipe.model.Difficulty).values()}"
+                                        <option th:each="difficultyValue: ${T(Difficulty).values()}"
                                                 th:value="${difficultyValue.name()}"
                                                 th:text="${difficultyValue.name()}">
                                         </option>

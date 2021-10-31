@@ -1,4 +1,4 @@
-package ca.gbc.comp3095.food_recipe.model;
+package ca.gbc.comp3095.model;
 
 // this will hold the calendar to-do list for users associating them by user ID
 
