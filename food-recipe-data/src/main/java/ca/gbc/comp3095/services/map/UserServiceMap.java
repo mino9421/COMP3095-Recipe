@@ -2,9 +2,10 @@ package ca.gbc.comp3095.services.map;
 
 import ca.gbc.comp3095.model.User;
 import ca.gbc.comp3095.services.CrudService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
-
+@Service
 public class UserServiceMap extends AbstractMapService<User, Long> implements CrudService<User, Long> {
 
     @Override

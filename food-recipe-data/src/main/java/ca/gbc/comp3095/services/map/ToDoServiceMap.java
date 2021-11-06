@@ -2,9 +2,10 @@ package ca.gbc.comp3095.services.map;
 
 import ca.gbc.comp3095.model.ToDo;
 import ca.gbc.comp3095.services.CrudService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
-
+@Service
 public class ToDoServiceMap extends AbstractMapService<ToDo, Long> implements CrudService<ToDo, Long> {
 
     @Override

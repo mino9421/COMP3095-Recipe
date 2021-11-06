@@ -1,12 +1,12 @@
 package ca.gbc.comp3095.services.map;
 
-import ca.gbc.comp3095.model.BaseEntity;
+import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
-
+@Service
 public abstract class AbstractMapService<T, ID> {
 
     protected Map<ID, T> map = new HashMap<>();
