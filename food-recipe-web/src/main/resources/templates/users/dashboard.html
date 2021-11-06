@@ -40,7 +40,7 @@
 <div class="container">
     <h3>Welcome to food recipe management application!</h3>
 
-    <h4 th:text="'List Owners'">User List</h4>
+    <h4 th:text="'List Users'">User List</h4>
     <table>
 
         <thead>
@@ -51,11 +51,11 @@
         </tr>
         </thead>
 
-        <tbody>
+        <tbody style="border: black">
         <tr th:each="user : ${users}">
-            <td th:text="${user.id}"></td>
-            <td th:text="${user.firstname}"></td>
-            <td th:text="${user.lastname}"></td>
+            <td th:text="${user.id}">palceholder</td>
+            <td th:text="${user.firstname}">placeholder</td>
+            <td th:text="${user.lastname}">placeholder</td>
         </tr>
         </tbody>
 

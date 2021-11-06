@@ -19,7 +19,7 @@ public class UserController {
 
     @RequestMapping({"", "/", "/dashboard", "/dashboard.html"})
     public String listUser(Model model){
-        model.addAttribute("users", userService.findAll());
+        model.addAttribute("users", userService.findByFirstname("Armen"));
         return "users/dashboard";
     }
 }
