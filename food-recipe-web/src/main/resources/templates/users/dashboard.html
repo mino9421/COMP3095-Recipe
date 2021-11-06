@@ -39,6 +39,27 @@
 </nav>
 <div class="container">
     <h3>Welcome to food recipe management application!</h3>
+
+    <h4 th:text="'List Owners'">User List</h4>
+    <table>
+
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr th:each="user : ${users}">
+            <td th:text="${user.id}"></td>
+            <td th:text="${user.firstname}"></td>
+            <td th:text="${user.lastname}"></td>
+        </tr>
+        </tbody>
+
+    </table>
 </div>
 </body>
 </html>
