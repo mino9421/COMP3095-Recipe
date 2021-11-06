@@ -22,8 +22,9 @@ public class RecipeController {
 
 
     @RequestMapping({"/", "/allRecipe", "/allRecipe.html"})
-    public String listRecipe(){
-        return "recipe/allRecipe";
+    public String listRecipe(Model model){
+        model.addAttribute("recipes", recipeService.findAll());
+        return "users/recipe/allRecipe";
     }
 
 
