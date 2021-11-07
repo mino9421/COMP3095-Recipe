@@ -46,7 +46,7 @@ public class DataLoader implements CommandLineRunner {
 
         Recipe recipe1 = new Recipe();
         recipe1.setRecipeName("cheese burger");
-        recipe1.setUser(user1);
+//        recipe1.setUser(user1);
         recipe1.setCookTime(15);
         recipe1.setPrepTime(10);
         recipe1.setInstructions("blah blah blah");
@@ -58,7 +58,7 @@ public class DataLoader implements CommandLineRunner {
 
         Recipe recipe2 = new Recipe();
         recipe2.setRecipeName("pasta");
-        recipe2.setUser(user2);
+//        recipe2.setUser(user2);
         recipe2.setCookTime(20);
         recipe2.setPrepTime(15);
         recipe2.setInstructions("abc abc abc abc");

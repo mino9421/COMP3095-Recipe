@@ -13,7 +13,14 @@ public class Recipe extends BaseEntity {
     // We can talk about this
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private User user; // this is like the owner of the recipe (association recipe x user)
+    private Long id;
+
+    public Long getId(){return id;}
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+//    private User user; // this is like the owner of the recipe (association recipe x user)
     private String recipeName;
     private Integer prepTime;
     private Integer cookTime;
@@ -22,13 +29,13 @@ public class Recipe extends BaseEntity {
     private String difficulty;
     private String ingredient;
 
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
+//    public User getUser() {
+//        return user;
+//    }
+//
+//    public void setUser(User user) {
+//        this.user = user;
+//    }
 
     public String getRecipeName() {
         return recipeName;
