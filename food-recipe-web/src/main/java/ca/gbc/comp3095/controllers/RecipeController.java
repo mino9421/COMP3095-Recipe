@@ -29,31 +29,31 @@ public class RecipeController {
 
 
 
-//    @GetMapping("/recipe/{id}/view")
-//    public String showById(@PathVariable String id, Model model){
-//        System.out.println("Inside Recipe Controller....with id value="+id);
-//        model.addAttribute("recipes", recipeService.findById(Long.valueOf(id)));
-//        return "view";
-//
-//    }
-//    @GetMapping("recipe/add")
-//    public String addRecipe(Model model){
-//        model.addAttribute("recipes", new Recipe());
-//
-//        return "addRecipe";
-//    }
-//
-//    @GetMapping("recipe/{id}/update")
-//    public String updateRecipe(@PathVariable String id, Model model){
-//
-//        return "update";
-//    }
-//
-//    @GetMapping ("recipe/{id}/delete")
-//    public String deleteRecipe(@PathVariable String id){
-//        log.debug("Deleting id: "+ id);
-//        recipeService.deleteById(Long.valueOf(id));
-//        log.debug("deletion complete...");
-//        return "redirect:/";
-//    }
+    @GetMapping("/recipe/{id}/view")
+    public String showById(@PathVariable String id, Model model){
+        System.out.println("Inside Recipe Controller....with id value="+id);
+        model.addAttribute("recipes", recipeService.findById(Long.valueOf(id)));
+        return "view";
+
+    }
+    @GetMapping("recipe/add")
+    public String addRecipe(Model model){
+        model.addAttribute("recipes", new Recipe());
+
+        return "addRecipe";
+    }
+
+    @GetMapping("recipe/{id}/update")
+    public String updateRecipe(@PathVariable String id, Model model){
+
+        return "update";
+    }
+
+    @GetMapping ("recipe/{id}/delete")
+    public String deleteRecipe(@PathVariable String id){
+        log.debug("Deleting id: "+ id);
+        recipeService.deleteById(Long.valueOf(id));
+        log.debug("deletion complete...");
+        return "redirect:/";
+    }
 }
