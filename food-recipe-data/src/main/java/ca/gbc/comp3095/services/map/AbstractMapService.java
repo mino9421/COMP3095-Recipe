@@ -1,6 +1,7 @@
 package ca.gbc.comp3095.services.map;
 
-import ca.gbc.comp3095.model.BaseEntity;
+import org.springframework.stereotype.Service;
+
 
 import java.util.*;
 
