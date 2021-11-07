@@ -7,17 +7,17 @@ import java.time.LocalDate;
 public class ToDo extends BaseEntity{
 
     private User user; // this associates to-do with a user (to-do x user)
-    private Recipe recipe;
+    private RecipeDTO recipe;
 
     private String eventName;
     private LocalDate issueDate;
     private LocalDate dueDate;
 
-    public Recipe getRecipe() {
+    public RecipeDTO getRecipe() {
         return recipe;
     }
 
-    public void setRecipe(Recipe recipe) {
+    public void setRecipe(RecipeDTO recipe) {
         this.recipe = recipe;
     }
 

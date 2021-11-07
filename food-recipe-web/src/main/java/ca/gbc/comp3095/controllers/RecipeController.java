@@ -1,64 +1,61 @@
 package ca.gbc.comp3095.controllers;
 
 import ca.gbc.comp3095.model.Recipe;
+import ca.gbc.comp3095.model.RecipeDTO;
 import ca.gbc.comp3095.services.RecipeService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 @Slf4j
-@Controller
-@RequestMapping("/users/recipe")
+@RestController
+@RequestMapping("/users")
 public class RecipeController {
-
-    private final RecipeService recipeService;
     @Autowired
-    public RecipeController(RecipeService recipeService) {
-        this.recipeService = recipeService;
-    }
-
+    private RecipeService recipeService;
+ ///show all
 
     @RequestMapping({"/", "/allRecipe", "/allRecipe.html"})
     public String listRecipe(Model model){
         model.addAttribute("recipes", recipeService.findAll());
         return "users/recipe/allRecipe";
     }
+    //view 1
 
     @GetMapping("/recipe/{id}/view")
     public String showById(@PathVariable String id, Model model){
         System.out.println("Inside Recipe Controller....with id value="+id);
 
-        model.addAttribute("recipes", recipeService.findById(Long.valueOf(id)));
-        return "view";
+        model.addAttribute("recipe", recipeService.findById(Long.valueOf(id)));
+        return "users/recipe/viewDetail";
     }
-  
-    @GetMapping("recipe/add")
-    public String addRecipe(Model model){
-        model.addAttribute("recipes", new Recipe());
-
-        return "recipe/addRecipe";
-    }
-
-    @GetMapping("recipe/{id}/update")
-    public String updateRecipe(@PathVariable String id, Model model){
-         model.addAttribute("recipe", recipeService.findById(Long.valueOf(id)));
-
-        return "recipe/update";
-    }
-    @PostMapping("recipe")
-    public String saveOrUpdate(@ModelAttribute Recipe command){
-        Recipe savedCommand = recipeService.save(command);
-
-        return "redirect:/recipe/" + savedCommand.getId() +"/addRecipe";
-    }
-
-    @GetMapping ("recipe/{id}/delete")
-    public String deleteRecipe(@PathVariable String id){
-        log.debug("Deleting id: "+ id);
-        recipeService.deleteById(Long.valueOf(id));
-        log.debug("deletion complete...");
+    //save
+    @RequestMapping (value = "/save", method = RequestMethod.POST)
+    public String saveRecipe(@ModelAttribute ("recipe") RecipeDTO recipeDTO){
+        recipeService.save(recipeDTO);
         return "redirect:/";
     }
+    //add new
+    @RequestMapping("/recipe/add")
+    public String addRecipe(Model model){
+        Recipe recipe = new Recipe();
+        model.addAttribute(recipe);
+
+        return "users/recipe/addRecipe";
+    }
+
+    // edit
+    @RequestMapping("recipe/{id}/edit")
+    public String editRecipe(@PathVariable String id, Model model){
+        model.addAttribute("recipe", recipeService.findById(Long.valueOf(id)));
+        return "users/recipe/editRecipe";
+    }
+//delete
+    @GetMapping ("recipe/{id}/delete")
+    public String deleteRecipe(@PathVariable String id) {
+        recipeService.deleteById(Long.valueOf(id));
+        return "redirect:/";
+    }
+
 }

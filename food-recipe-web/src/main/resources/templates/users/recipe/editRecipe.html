@@ -40,7 +40,7 @@
 <div class="container-fluid" style="margin-top: 20px">
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
-            <form  th:object="${recipe}" th:action="@{/save/}"  method="post">
+            <form  action="#" th:object="${recipe}" th:action="@{/save/}"  method="post">
                 <input type="hidden" th:field="*{id}"/>
                 <div class="pannel-group">
                     <div class="panel panel-primary">
@@ -68,6 +68,7 @@
                                     <select class="form-control" th:field="*{difficulty}">
                                         <option>Easy</option>
                                         <option>Medium</option>
+                                        <option>Moderate</option>
                                         <option>Hard</option>
                                     </select>
                                 </div>
@@ -86,20 +87,12 @@
                                 <div class="col-md-10">
                                     <h1 class="panel-title">Ingredients</h1>
                                 </div>
-                                <div class="col-md-2">
-                                    <a class="btn btn-warning " href="#" role="button">Edit</a>
-                                </div>
                             </div>
                         </div>
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <ul>
-                                        <li th:remove="all">1 Cup of milk</li>
-                                        <li th:remove="all">1 Teaspoon of chocolate</li>
-                                        <li th:field="*{ingredient}">1 Teaspoon of Sugar
-                                        </li>
-                                    </ul>
+                                    <p th:text="${ingredient}">Here is ingredient for this food!</p>
                                 </div>
                             </div>
                         </div>

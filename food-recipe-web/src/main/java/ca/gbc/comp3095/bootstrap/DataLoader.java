@@ -1,6 +1,7 @@
 package ca.gbc.comp3095.bootstrap;
 
 import ca.gbc.comp3095.model.Recipe;
+import ca.gbc.comp3095.model.RecipeDTO;
 import ca.gbc.comp3095.model.ToDo;
 import ca.gbc.comp3095.model.User;
 import ca.gbc.comp3095.services.RecipeService;
@@ -42,14 +43,14 @@ public class DataLoader implements CommandLineRunner {
 
         System.out.println("Loaded user samples...");
 
-        Recipe recipe1 = new Recipe();
+        RecipeDTO recipe1 = new RecipeDTO();
         recipe1.setRecipeName("cheese burger");
-        recipe1.setUser(user1);
+       // recipe1.setUser(user1);
         recipeService.save(recipe1);
 
-        Recipe recipe2 = new Recipe();
+        RecipeDTO recipe2 = new RecipeDTO();
         recipe2.setRecipeName("pasta");
-        recipe2.setUser(user2);
+       // recipe2.setUser(user2);
         recipeService.save(recipe2);
 
         System.out.println("Loaded recipe samples...");

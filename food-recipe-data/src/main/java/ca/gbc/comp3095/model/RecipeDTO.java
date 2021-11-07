@@ -1,20 +1,14 @@
 package ca.gbc.comp3095.model;
 
-import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import java.io.Serializable;
 
-import javax.persistence.*;
 @Getter
 @Setter
 @NoArgsConstructor
-@Data
-@Entity
-@Table
-public class Recipe{
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class RecipeDTO implements Serializable {
     private Long id;
     private String recipeName;
     private Integer prepTime;

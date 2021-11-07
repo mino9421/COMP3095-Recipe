@@ -29,8 +29,8 @@
         </div>
         <ul class="nav navbar-nav">
             <li ><a href="dashboard.html">Home</a></li>
-            <li><a href="recipe/allRecipe.html">My recipes</a></li>
-            <li><a href="recipe/addRecipe.html">Add new recipe</a></li>
+            <li><a th:href="@{'/allRecipe'}">My recipes</a></li>
+            <li><a th:href="@{'recipe/add'}">Add new recipe</a></li>
             <li class="active"><a href="planMeal.html">Plan for the meal</a></li>
             <li><a href="profile.html">My profile</a></li>
             <li style="font-weight: bold;"><a href="../index.html">Logout</a></li>
