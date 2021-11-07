@@ -1,7 +1,6 @@
 package ca.gbc.comp3095.services.map;
 
 import ca.gbc.comp3095.model.User;
-
 import ca.gbc.comp3095.services.UserService;
 import org.springframework.stereotype.Service;
 

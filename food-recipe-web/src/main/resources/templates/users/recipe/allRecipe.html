@@ -57,21 +57,6 @@
                                 <th>Delete</th>
                             </tr>
                             </thead>
-
-                            <tr th:remove="all">
-                                <td>1</td>
-                                <td>Food 1</td>
-                                <td><a href="#">View</a></td>
-                                <td><a href="#">Update</a></td>
-                                <td><a href="#">Delete</a></td>
-                            </tr>
-                            <tr th:remove="all">
-                                <td>2</td>
-                                <td>Food 2</td>
-                                <td><a href="#">View</a></td>
-                                <td><a href="#">Update</a></td>
-                                <td><a href="#">Delete</a></td>
-                            </tr>
                             <tbody>
                                 <tr th:each="recipe : ${recipes}">
 

@@ -13,29 +13,22 @@ public class RecipeServiceMap extends AbstractMapService<Recipe, Long> implement
 
     @Override
     public Recipe findById(Long id) {
-        Optional<Recipe> recipeOptional = recipeRepository.findById(id);
-
-        if (!recipeOptional.isPresent()) {
-            throw new RuntimeException("Recipe Not Found!");
-        }
-
-        return recipeOptional.get();
+        return super.findById(id);
     }
+
     @Override
     public Recipe save(Recipe object) {
         return super.save(object);
     }
+
     @Override
     public Set<Recipe> findAll() {
-        log.debug("I am in the service..");
-        Set<Recipe> recipeSet = new HashSet<>();
-        recipeRepository.findAll().iterator().forEachRemaining(recipeSet::add);
-        return recipeSet;
+        return super.findAll();
     }
 
     @Override
     public void deleteById(Long id) {
-        recipeRepository.deleteById(id);
+        super.deleteById(id);
     }
 
     @Override
