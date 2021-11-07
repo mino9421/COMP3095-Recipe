@@ -7,7 +7,28 @@ public class Recipe extends BaseEntity {
 
     private User user; // this is like the owner of the recipe (association recipe x user)
 
-    private String recipeName, instructions;
+    private String recipeName;
+    private String instructions;
+    private String difficulty;
+    private String ingredient;
+
+    public String getIngredient() {
+        return ingredient;
+    }
+
+    public void setIngredient(String ingredient) {
+        this.ingredient = ingredient;
+    }
+
+    public String getDifficulty() {
+        return difficulty;
+    }
+
+    public void setDifficulty(String difficulty) {
+        this.difficulty = difficulty;
+    }
+
+
 
     private int prepTime, cookTime, serving;
 
