@@ -7,7 +7,9 @@ import ca.gbc.comp3095.services.RecipeService;
 import ca.gbc.comp3095.services.ToDoService;
 import ca.gbc.comp3095.services.UserService;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.stereotype.Component;
 
+@Component
 public class DataLoader implements CommandLineRunner {
 
     private final UserService userService;

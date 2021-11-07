@@ -7,7 +7,41 @@ public class Recipe extends BaseEntity {
 
     private User user; // this is like the owner of the recipe (association recipe x user)
 
-    private String recipeName;
+    private String recipeName, instructions;
+
+    private int prepTime, cookTime, serving;
+
+    public String getInstructions() {
+        return instructions;
+    }
+
+    public void setInstructions(String instructions) {
+        this.instructions = instructions;
+    }
+
+    public int getPrepTime() {
+        return prepTime;
+    }
+
+    public void setPrepTime(int prepTime) {
+        this.prepTime = prepTime;
+    }
+
+    public int getCookTime() {
+        return cookTime;
+    }
+
+    public void setCookTime(int cookTime) {
+        this.cookTime = cookTime;
+    }
+
+    public int getServing() {
+        return serving;
+    }
+
+    public void setServing(int serving) {
+        this.serving = serving;
+    }
 
     public User getUser() {
         return user;
@@ -22,4 +56,6 @@ public class Recipe extends BaseEntity {
     public void setRecipeName(String recipeName) {
         this.recipeName = recipeName;
     }
+
+
 }
