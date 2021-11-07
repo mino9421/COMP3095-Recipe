@@ -9,9 +9,9 @@ import javax.persistence.*;
 @Entity
 @Table(name = "user")
 public class User extends BaseEntity{
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
     private Long id;
 
     public Long getId(){return id;}
