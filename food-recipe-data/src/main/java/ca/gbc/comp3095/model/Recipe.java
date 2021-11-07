@@ -9,8 +9,6 @@ import javax.persistence.*;
 @Table(name = "recipes")
 public class Recipe extends BaseEntity {
 
-    // I think we need to implement ingredient, but not sure how are we doing the connection
-    // We can talk about this
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
