@@ -1,12 +1,19 @@
 package ca.gbc.comp3095.services.map;
 
+import ca.gbc.comp3095.model.Recipe;
 import ca.gbc.comp3095.model.ToDo;
-import ca.gbc.comp3095.services.CrudService;
+
+import ca.gbc.comp3095.model.User;
+import ca.gbc.comp3095.services.ToDoService;
+
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.Set;
+
+
 @Service
-public class ToDoServiceMap extends AbstractMapService<ToDo, Long> implements CrudService<ToDo, Long> {
+public class ToDoServiceMap extends AbstractMapService<ToDo, Long> implements ToDoService {
 
     @Override
     public ToDo findById(Long id) {
@@ -20,7 +27,7 @@ public class ToDoServiceMap extends AbstractMapService<ToDo, Long> implements Cr
 
     @Override
     public ToDo save(ToDo object) {
-        return super.save(object.getId(), object);
+        return super.save(object);
     }
 
     @Override
@@ -38,4 +45,26 @@ public class ToDoServiceMap extends AbstractMapService<ToDo, Long> implements Cr
         super.delete(object);
     }
 
+
+    // needs implementations
+
+    @Override
+    public ToDo findByUser(User user) {
+        return null;
+    }
+
+    @Override
+    public ToDo findByRecipe(Recipe recipe) {
+        return null;
+    }
+
+    @Override
+    public ToDo findByEventName(String eventName) {
+        return null;
+    }
+
+    @Override
+    public ToDo findByDueDate(LocalDate dueDate) {
+        return null;
+    }
 }

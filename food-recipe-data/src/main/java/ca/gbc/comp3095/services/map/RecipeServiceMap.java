@@ -1,21 +1,15 @@
 package ca.gbc.comp3095.services.map;
-import ca.gbc.comp3095.services.CrudService;
-import lombok.extern.slf4j.Slf4j;
+
 import ca.gbc.comp3095.model.Recipe;
-import ca.gbc.comp3095.repositories.RecipeRepository;
+import ca.gbc.comp3095.model.ToDo;
+import ca.gbc.comp3095.model.User;
 import ca.gbc.comp3095.services.RecipeService;
 import org.springframework.stereotype.Service;
-import java.util.HashSet;
-import java.util.Optional;
-import java.util.Set;
-@Slf4j
-@Service
-public class RecipeServiceMap extends AbstractMapService<Recipe, Long> implements CrudService<Recipe, Long> {
-    private final RecipeRepository recipeRepository;
 
-    public RecipeServiceMap(RecipeRepository recipeRepository) {
-        this.recipeRepository = recipeRepository;
-    }
+import java.util.Set;
+
+@Service
+public class RecipeServiceMap extends AbstractMapService<Recipe, Long> implements RecipeService {
 
     @Override
     public Recipe findById(Long id) {
@@ -29,7 +23,7 @@ public class RecipeServiceMap extends AbstractMapService<Recipe, Long> implement
     }
     @Override
     public Recipe save(Recipe object) {
-        return super.save(object.getId(), object);
+        return super.save(object);
     }
     @Override
     public Set<Recipe> findAll() {
@@ -47,5 +41,18 @@ public class RecipeServiceMap extends AbstractMapService<Recipe, Long> implement
     @Override
     public void delete(Recipe object) {
         super.delete(object);
+    }
+
+
+    // needs implementation
+
+    @Override
+    public ToDo findByUser(User user) {
+        return null;
+    }
+
+    @Override
+    public Recipe findByRecipeName(String recipeName) {
+        return null;
     }
 }
