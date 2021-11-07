@@ -2,56 +2,66 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="ISO-8859-1">
-    <title>Register</title>
-    <link th:href="@{/css/styles.css}" rel="stylesheet" />   
+    <title>Sign Up - CodeJava</title>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+    <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+    <style>
+    body{
+    	background:#EEE;
+     text-align: center;
+     margin-top:10%;
+    }
 
+form {
+    display: inline-block;
+   
+}
+    </style>
 </head>
 <body>
- 			<div class="container">
- 			<form th:action="@{/process_register}" th:object="${user}" method="post" id="login">
- 			
-            <h2 >SIGN UP</h2>
-             <fieldset>
-                <div class="form-group row">
-                    <label class="col-4 col-form-label">E-mail: </label>
-                    <div class="col-8">
-                        <input type="email" th:field="*{email}"   required autofocus/>
-                    </div>
+    <div class="container-fluid" >
+        
+        <form th:action="@{/process_register}" th:object="${user}"
+            method="post" style="max-width: 600px; margin: 0 auto;" class="form-signin">
+            <h2 class = "form-signing-headling">Sign Up!</h2>
+        <div class="m-3">
+            <div class="form-group row">
+                <label class="col-4 col-form-label">E-mail: </label>
+                <div class="col-8">
+                    <input type="email" th:field="*{email}" class="form-control " required autofocus/>
                 </div>
-            </fieldset>
-            <fieldset>
-                <div class="form-group row">
-                    <label class="col-4 col-form-label">Password: </label>
-                    <div class="col-8">
-                        <input type="password" style="width:100%" th:field="*{password}"  
-                                required minlength="6" maxlength="20"/>
-                    </div>
+            </div>
+             
+            <div class="form-group row">
+                <label class="col-4 col-form-label">Password: </label>
+                <div class="col-8">
+                    <input type="password" th:field="*{password}" class="form-control "
+                            required minlength="6" maxlength="10"/>
                 </div>
-            </fieldset>    
-            <fieldset>
-                <div class="form-group row">
-                    <label class="col-4 col-form-label">First Name: </label>
-                    <div class="col-8">
-                        <input type="text" th:field="*{firstName}"  
-                                required minlength="2" maxlength="20"/>
-                    </div>
+            </div>
+             
+            <div class="form-group row">
+                <label class="col-4 col-form-label">First Name: </label>
+                <div class="col-8">
+                    <input type="text" th:field="*{firstName}" class="form-control "
+                            required minlength="2" maxlength="20"/>
                 </div>
-            </fieldset>
-            <fieldset>
-                <div class="form-group row">
-                    <label class="col-4 col-form-label ">Last Name: </label>
-                    <div class="col-8">
-                        <input type="text" th:field="*{lastName}"  
-                                required minlength="2" maxlength="20" />
-                    </div>
+            </div>
+             
+            <div class="form-group row">
+                <label class="col-4 col-form-label ">Last Name: </label>
+                <div class="col-8">
+                    <input type="text" th:field="*{lastName}" class="form-control"
+                            required minlength="2" maxlength="20" />
                 </div>
-            </fieldset>
-            <fieldset>
-                <div>
-                    <button type="submit" class="btn btn-lg btn-primary btn-block">Sign Up</button>
-                </div>
-            </fieldset>
- 			</form>
- 			</div>
+            </div>
+             
+            <div>
+                <button type="submit" class="btn btn-lg btn-primary btn-block">Sign Up</button>
+            </div>
+        </div>
+        </form>
+    </div>
 </body>
 </html>
