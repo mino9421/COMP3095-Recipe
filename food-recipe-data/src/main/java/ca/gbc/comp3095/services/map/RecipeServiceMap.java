@@ -1,11 +1,15 @@
 package ca.gbc.comp3095.services.map;
 
 import ca.gbc.comp3095.model.Recipe;
-import ca.gbc.comp3095.services.CrudService;
+import ca.gbc.comp3095.model.ToDo;
+import ca.gbc.comp3095.model.User;
+import ca.gbc.comp3095.services.RecipeService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
-public class RecipeServiceMap extends AbstractMapService<Recipe, Long> implements CrudService<Recipe, Long> {
+@Service
+public class RecipeServiceMap extends AbstractMapService<Recipe, Long> implements RecipeService {
 
     @Override
     public Recipe findById(Long id) {
@@ -14,7 +18,7 @@ public class RecipeServiceMap extends AbstractMapService<Recipe, Long> implement
 
     @Override
     public Recipe save(Recipe object) {
-        return super.save(object.getId(), object);
+        return super.save(object);
     }
 
     @Override
@@ -30,5 +34,18 @@ public class RecipeServiceMap extends AbstractMapService<Recipe, Long> implement
     @Override
     public void delete(Recipe object) {
         super.delete(object);
+    }
+
+
+    // needs implementation
+
+    @Override
+    public ToDo findByUser(User user) {
+        return null;
+    }
+
+    @Override
+    public Recipe findByRecipeName(String recipeName) {
+        return null;
     }
 }

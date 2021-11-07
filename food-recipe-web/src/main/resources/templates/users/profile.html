@@ -39,6 +39,27 @@
 </nav>
 <div class="container">
     <h3>Need to code</h3>
+
+    <h4>List of Planned Meals</h4>
+    <table>
+
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Meal/Recipe Name</th>
+            <th>Date</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr th:each="todo : ${todos}">
+            <td th:text="${todo.id}"></td>
+            <td th:text="${todo.eventName}"></td>
+            <td th:text="${todo.dueDate}"></td>
+        </tr>
+        </tbody>
+
+    </table>
 </div>
 </body>
 </html>

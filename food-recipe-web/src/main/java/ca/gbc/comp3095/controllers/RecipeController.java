@@ -22,8 +22,9 @@ public class RecipeController {
 
 
     @RequestMapping({"/", "/allRecipe", "/allRecipe.html"})
-    public String listRecipe(){
-        return "recipe/allRecipe";
+    public String listRecipe(Model model){
+        model.addAttribute("recipes", recipeService.findAll());
+        return "users/recipe/allRecipe";
     }
 
 
@@ -31,13 +32,13 @@ public class RecipeController {
     @GetMapping("/recipe/{id}/view")
     public String showById(@PathVariable String id, Model model){
         System.out.println("Inside Recipe Controller....with id value="+id);
-        model.addAttribute("recipe", recipeService.findById(Long.valueOf(id)));
+        model.addAttribute("recipes", recipeService.findById(Long.valueOf(id)));
         return "view";
 
     }
     @GetMapping("recipe/add")
     public String addRecipe(Model model){
-        model.addAttribute("recipe", new Recipe());
+        model.addAttribute("recipes", new Recipe());
 
         return "addRecipe";
     }
