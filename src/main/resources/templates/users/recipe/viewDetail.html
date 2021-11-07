@@ -46,7 +46,7 @@
                     <div class="panel-heading">
                         <div class="row">
                             <div class="col-md-4">
-                                <h1 class="panel-title" th:text="${recipe.description}">Hamburger</h1>
+                                <h1 class="panel-title" th:text="${recipe.recipeName}">Hamburger</h1>
                             </div>
                             <div class="col-md-1">
                                 <img class="btn btn-default" href="#" th:href="@{'/recipe/' + ${recipe.id} + '/image'}">
@@ -99,12 +99,7 @@
                     <div class="panel-body">
                         <div class="row">
                             <div class="col-md-12">
-                                <ul th:each="ingredient: ${recipe.ingredient}">
-                                    <li th:remove="all">1 Teaspoon of salt</li>
-                                    <li th:remove="all">1 Teaspoon of Sugar</li>
-                                    <li th:text="${ingredient.getAmount() +
-                                    ' - '+ingredient.getDescription()}">1 load of bread</li>
-                                </ul>
+                                <p th:text="${recipe.ingredient}">Here is ingredient for this food!</p>
                             </div>
                         </div>
                     </div>

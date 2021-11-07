@@ -87,15 +87,12 @@
                                 <div class="col-md-10">
                                     <h1 class="panel-title">Ingredients</h1>
                                 </div>
-                                <div class="col-md-2">
-                                    <a class="btn btn-warning " href="#" role="button">Edit</a>
-                                </div>
                             </div>
                         </div>
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p th:field="${recipe.ingredient}">Here is ingredient for this food!</p>
+                                    <p th:text="${recipe.ingredient}">Here is ingredient for this food!</p>
                                 </div>
                             </div>
                         </div>

@@ -1,23 +1,24 @@
 package ca.gbc.comp3095.food_recipe.model;
-
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-
-import java.util.HashSet;
-import java.util.Set;
-
+import lombok.*;
+import javax.persistence.*;
 @Getter
 @Setter
 @NoArgsConstructor
-public class Recipe {
+@AllArgsConstructor
+@Entity
+@Table
+public class Recipe{
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String description;
+    private String recipeName;
     private Integer prepTime;
     private Integer cookTime;
     private Integer serving;
+    @Lob
     private String instructions;
-    private Set<Ingredient> ingredients = new HashSet<>();
-    private Byte[] image;
-    private Difficulty difficulty;
+    @Lob
+    private String difficulty;
+    private String ingredient;
+
 }
