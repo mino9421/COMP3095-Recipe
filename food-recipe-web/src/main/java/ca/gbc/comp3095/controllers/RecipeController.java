@@ -27,7 +27,11 @@ public class RecipeController {
         return "users/recipe/allRecipe";
     }
 
-
+    @RequestMapping({"/view", "/view.html"})
+    public String viewRecipe(Model model){
+        model.addAttribute("recipes", recipeService.findAll());
+        return "users/recipe/view";
+    }
 
     @GetMapping("/recipe/{id}/view")
     public String showById(@PathVariable String id, Model model){
@@ -39,7 +43,6 @@ public class RecipeController {
     @GetMapping("recipe/add")
     public String addRecipe(Model model){
         model.addAttribute("recipes", new Recipe());
-
         return "addRecipe";
     }
 
