@@ -16,10 +16,10 @@ import java.util.Set;
 //@EnableJpaRepositories("ca.gbc.comp3095.data.jpa.dao")
 
 public interface RecipeService extends CrudService<Recipe, Long> {
+
 //    @Id
 //    @Column(name = "id", nullable = false)
 //    @GeneratedValue
-//    Long id = null;
 
     ToDo findByUser(User user); // I am not sure about this method, trying to search To-Do list by user
 
