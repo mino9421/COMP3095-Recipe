@@ -30,7 +30,7 @@
         <ul class="nav navbar-nav">
             <li><a href="../index.html">Home</a></li>
             <li><a href="#">Recipes</a></li>
-            <li class="active"><a href="login.html">Login</a></li>
+            <li class="active"><a th:action="@{/login}" method="get">Login</a></li>
             <li><a href="register.html">Registration</a></li>
         </ul>
     </div>
@@ -45,7 +45,7 @@
                         <div class="card-body p-5">
                             <h2 class="text-uppercase text-center mb-5">Login</h2>
 
-                            <form style="text-align: center;">
+                            <form style="text-align: center;" th:action="@{/login}" method="post">
 
                                 <div class="form-outline mb-4">
                                     <label class="form-label">

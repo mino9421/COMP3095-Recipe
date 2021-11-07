@@ -46,10 +46,10 @@ public class DataLoader implements CommandLineRunner {
 
         Recipe recipe1 = new Recipe();
         recipe1.setRecipeName("cheese burger");
-//        recipe1.setUser(user1);
         recipe1.setCookTime(15);
         recipe1.setPrepTime(10);
-        recipe1.setInstructions("blah blah blah");
+        recipe1.setIngredient("1 salt and 2 eggs");
+        recipe1.setInstructions("cook for 1 min");
         recipe1.setDifficulty("hard");
         recipe1.setServing(3);
 
@@ -61,8 +61,9 @@ public class DataLoader implements CommandLineRunner {
 //        recipe2.setUser(user2);
         recipe2.setCookTime(20);
         recipe2.setPrepTime(15);
-        recipe2.setInstructions("abc abc abc abc");
+        recipe2.setInstructions("cook 2 times");
         recipe2.setServing(5);
+        recipe1.setIngredient("1 tomato");
         recipe2.setDifficulty("easy");
         recipeService.save(recipe2);
 
