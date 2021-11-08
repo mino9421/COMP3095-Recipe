@@ -15,20 +15,29 @@ public class IndexController {
         return "Index";
     }
 
-    @RequestMapping(value = "/login", method = RequestMethod.GET)
+    @RequestMapping(value = {"/nonUsers/login.html", "/login.html"}, method = RequestMethod.GET)
     public String getLoginForm(){
 
-        return "noneUsers/login";
+        return "nonUsers/login";
     }
+    @RequestMapping(value = {"/nonUsers/register.html", "/register.html"}, method = RequestMethod.GET)
+    public String getRegisterForm(){
 
-    @RequestMapping(value ="/login", method= RequestMethod.POST)
-    public String login(@ModelAttribute("user") User user, Model model){
-        String username = user.getUsername();
-        String password = user.getPassword();
-        if("admin".equals(username) && "admin".equals(password)){
-            return "dashboard";
-        }
-        model.addAttribute("invalidCredentials", true);
-        return "noneUsers/login";
+        return "nonUsers/register";
     }
+    @RequestMapping(value = { "/users/dashboard.html"}, method = RequestMethod.GET)
+    public String getInsideForm(){
+
+        return "users/dashboard";
+    }
+//    @RequestMapping(value ="/login", method= RequestMethod.POST)
+//    public String login(@ModelAttribute("user") User user, Model model){
+//        String username = user.getUsername();
+//        String password = user.getPassword();
+//        if("admin".equals(username) && "admin".equals(password)){
+//            return "dashboard";
+//        }
+//        model.addAttribute("invalidCredentials", true);
+//        return "noneUsers/login";
+//    }
 }
