@@ -1,3 +1,12 @@
+/*
+ * Project: food recipe
+ * Assignment:  assignment 1
+ * Author(s):   Armen Levon Armen
+ * Student Number: 101281931
+ * Date: 11/7/2021 - mm/dd/yy
+ * Description: In this file I implement RecipeService and override the methods with appropriate implementations
+ */
+
 package ca.gbc.comp3095.services.map;
 
 import ca.gbc.comp3095.model.Recipe;

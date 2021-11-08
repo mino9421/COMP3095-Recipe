@@ -1,3 +1,13 @@
+/*
+ * Project: food recipe
+ * Assignment:  assignment 1
+ * Author(s):   Armen Levon Armen
+ * Student Number: 101281931
+ * Date: 11/7/2021 - mm/dd/yy
+ * Description: This interface extends CrudService and provides other unique methods
+ *                  to be implemented by RecipeServiceMap
+ */
+
 package ca.gbc.comp3095.services;
 
 import ca.gbc.comp3095.model.Recipe;
