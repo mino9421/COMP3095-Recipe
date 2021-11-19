@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class UserController {
 
-    // localhost:8080/dashboard.html
+    // localhost:8080/users/dashboard.html
 
     private final UserService userService;
 
