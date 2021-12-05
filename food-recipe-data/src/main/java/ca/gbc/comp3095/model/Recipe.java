@@ -28,6 +28,7 @@ public class Recipe extends BaseEntity {
     public void setId(Long id) {
         this.id = id;
     }
+
 //    private User user; // this is like the owner of the recipe (association recipe x user)
     private String recipeName;
     private Integer prepTime;
